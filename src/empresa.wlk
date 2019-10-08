@@ -18,12 +18,12 @@ class Empresa {
 		return profesionalesContratados.min({ p => p.honorariosPorHora()}) 
 	}
 	
-	method provinciasDondePuedeTrabajar() { 
-		
-	}
-	
 	method esDeGenteAcotada() { 
 		return profesionalesContratados.all({ p => p.provinciasDondePuedeTrabajar().size() <= 3 })
+	}
+
+	method satisfacer() {
+		
 	}
 
 }

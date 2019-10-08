@@ -1,12 +1,16 @@
-object persona { 
-	var provincia 
+class Persona { 
+	var property provincia
 	
-	method provinciaDondeEsta(prov) { provincia = prov }
+	method provinciaDondeEsta(profesional) { 
+		return profesional.provinciasDondePuedeTrabajar().any({ p => p.provincia() })   
+ 	}
 }
 
-object institucion { 
-	var universidad = []
+class Institucion { 
+	var property universidadesReconocidas
 
-	method atendidaPorProfesionales() { return universidad.any { p => p.cuantosProfesionalesEstuaronEn()} }
+	method puedeSerAtendido(profesional) { 
+		return universidadesReconocidas.any({ u => u == profesional.universidad()})
+	}
 }
 
